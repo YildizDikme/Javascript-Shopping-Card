@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');   
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200;300;400&display=swap');
+
+@font-face {
+    font-family: "STIXGeneral-Regular";
+    src: local("STIXGeneral Regular"), local(STIXGeneral-Regular), url("fonts/STIXGeneral-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "Kepler 3 Variable";
+    src: local("Kepler 3 Variable"), local("Kepler-3-Variable"), url("fonts/kepler/KeplerStdLight.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Kepler 3 Variable Italic";
+    src: local("Kepler 3 Variable Italic"), local("Kepler-3-Variable-Italic"), url("fonts/kepler/KeplerStdLightExtIt.otf") format("truetype");
+}
+
+
+.shop-img-box {
+    margin: 2rem 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.shop-img-box img {
+    width: 100%;
+    max-height: 750px;
+    object-fit: contain;
+    position: relative;
+}
+
+.slider-dots {
+    top: 90px;
+    z-index: 2;
+    left: 50%;
+}
+
+.slider-dots .dot {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slider-dots .dot::after {
+    content: "";
+    position: absolute;
+    opacity: .1;
+    background-color: #fff;
+    border-radius: 50%;
+    animation-name: ripple;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: scale(0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.slider-dots .active::after {
+    content: "";
+    opacity: 1;
+    width: 25px;
+    height: 25px;
+}
+
+
+.slider-dots i {
+    color: #fff;
+    font-size: 10px;
+}
+
+.slider-dots .dot-1 {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+}
+
+.slider-dots .dot-2 {
+    position: absolute;
+    top: 30%;
+    right: 39%;
+}
+
+.slider-dots .dot-3 {
+    position: absolute;
+    bottom: 40%;
+    right: 32%;
+}
+
+.slider-dots .dot-4 {
+    position: absolute;
+    bottom: 5%;
+    right: 34%;
+}
+
+
+.slider-text {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slider-text h1 {
+    font-family: "Kepler 3 Variable";
+    font-size: 35px;
+}
+
+.slider-text span {
+    font-family: "Kepler 3 Variable Italic";
+}
+
+
+.wavy-link {
+    font-family: lust-fine, sans-serif;
+    overflow: hidden;
+    padding: 7px 0;
+    text-decoration: none;
+    position: relative;
+    color: #262627;
+}
+
+.link__graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    fill: none;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
+.link__graphic--slide {
+    top: -3px;
+    stroke-width: 2px;
+    transition: transform 0.7s;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.link:hover {
+    color: #262626;
+}
+
+.link:hover .link__graphic--slide {
+    transform: translate3d(-66.6%, 0, 0);
+}
+
+
+.slider-card-box {
+    position: relative;
+}
+
+
+.slider-card-box .card {
+    display: none;
+}
+
+.slider-card-box .active-card {
+    display: block;
+}
+
+
+.slider {
+    width: 300px;
+    height: 600px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.arrow.left {
+    left: -22px;
+}
+
+.arrow.right {
+    right: -22px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+.image {
+    width: 300px;
+    display: none;
+}
+
+.image.active {
+    display: block;
+}
+
+
+
+.slider-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slider-title{
+    font-family: 'Castoro Titling', cursive;
+    font-size: 16px;
+    margin: 8px 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+span.old-price {
+    text-decoration: line-through;
+    color: #777;
+    font-size: 16px;
+    font-family: 'Catamaran', sans-serif;
+}
+
+span.new-price {
+    font-size: 16px;
+    font-family: 'Catamaran', sans-serif;
+    padding: 0 4px;
+}
+
+a.slider-btn {
+    font-family: 'Castoro Titling', cursive;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #605e5e;
+    padding: 6px 8px;
+}
+
+.price-box {
+    margin-bottom: 12px;
+}
+
+.slider-counter-box{
+    font-family: 'Castoro Titling', cursive;
+    font-size: 14px;
+    color: #605e5e;
+    margin: 8px 0;
+}
+
+@keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(4);
+    }
+}
